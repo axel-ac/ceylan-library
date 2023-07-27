@@ -4,6 +4,12 @@ import { menuIcon } from "../../helper/iconData";
 
 const Navbar = ({ currentUser, setCurrentUser }) => {
   const [showMenu, setshowMenu] = useState(false);
+
+  const logout = () => {
+    setCurrentUser(false)
+    sessionStorage.clear()
+  }
+
   return (
     <Nav justify="space-between" wrap="wrap">
       <Logo to="/">Ceylan Library</Logo>

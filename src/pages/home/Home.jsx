@@ -1,9 +1,12 @@
-import React from 'react'
-
+import React from "react";
+import { HomeContainer, HomeImg } from "./Home.style";
+import Header from "../../components/header/Header";
 const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
-
-export default Home
+    <HomeContainer>
+      <Header />
+      <HomeImg></HomeImg>
+    </HomeContainer>
+  );
+};
+export default Home;
