@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
@@ -11,13 +11,17 @@ import About from "../pages/about/About";
 import Detail from "../pages/detail/Detail";
 
 const AppRouter = () => {
+   const [currentUser, setCurrentUser] = useState(false);
   return (
     <BrowserRouter>
-      <Navbar />
+      <Navbar currentUser={currentUser} setCurrentUser={setCurrentUser} />
       <GlobalStyle />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
+        <Route
+          path="/login"
+          element={<Login setCurrentUser={setCurrentUser} />}
+        />
         <Route path="/register" element={<Register />} />
 
         {/* <Route path="/about" element={<PrivateRouter />}>
@@ -28,11 +32,10 @@ const AppRouter = () => {
           <Route path="" element={<Detail />}></Route>
         </Route> */}
 
-        <Route element={<PrivateRouter/>}>
-          <Route path="/about" element={<About/>} />
-          <Route path="/detail" element={<Detail/>} />
+        <Route element={<PrivateRouter />}>
+          <Route path="/about" element={<About />} />
+          <Route path="/detail" element={<Detail />} />
         </Route>
-        
       </Routes>
       <Footer />
     </BrowserRouter>
