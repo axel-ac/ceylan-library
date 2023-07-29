@@ -19,17 +19,20 @@ const Navbar = ({ currentUser, setCurrentUser }) => {
       <Menu showMenu={showMenu}>
         <MenuLink to="/">Home</MenuLink>
         <MenuLink to="/about">About</MenuLink>
+        {/* <MenuLink to="/register">Register</MenuLink>
+        <MenuLink to="/login">Login</MenuLink>
+        <MenuLink to="/login">Logout</MenuLink> */}
+
         {currentUser ? (
-          <MenuLink to="/login"> Logout</MenuLink>
+          <MenuLink to="/login" onClick={logout}>
+            Logout
+          </MenuLink>
         ) : (
           <>
-            <MenuLink to="/register"> Register</MenuLink>
+            <MenuLink to="/register">Register</MenuLink>
             <MenuLink to="/login">Login</MenuLink>
           </>
         )}
-        {/* <MenuLink to="/register"> Register</MenuLink>
-  <MenuLink to="/login">Login</MenuLink>
-  <MenuLink to="/login"> Logout</MenuLink>  */}
       </Menu>
     </Nav>
   );

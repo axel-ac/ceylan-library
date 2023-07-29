@@ -8,13 +8,13 @@ import {
   SelectBox,
 } from "./Header.style";
 
-const Header = ({ setQuery, setSelectType, getData}) => {
+const Header = ({ setQuery, setSelectType, getData }) => {
   const printType = ["all", "books", "magazines"];
 
   const handleSubmit = (e) => {
-  e.preventDefault()
-  getData()
-  }
+    e.preventDefault();
+    getData();
+  };
 
   return (
     <HeaderContainer>
@@ -34,7 +34,6 @@ const Header = ({ setQuery, setSelectType, getData}) => {
               </option>
             );
           })}
-          <option>All</option>
         </SelectBox>
         <HeaderButton type="submit">Search</HeaderButton>
       </HeaderForm>
