@@ -1,6 +1,7 @@
 import React from 'react'
 import { Description, DetailContainer, DetailImg, DetailTitle, InfoPart } from './Detail.style'
 import { useLocation, useParams } from 'react-router-dom'
+import defaultImg from "../../assets/book.jpg"
 
 const Detail = () => {
 
@@ -10,13 +11,27 @@ const Detail = () => {
   console.log(id)
 
   return (
-   <DetailContainer>
-    <DetailTitle></DetailTitle>
-    <DetailImg></DetailImg>
-    <Description></Description>
-    <InfoPart></InfoPart>
-   </DetailContainer>
-  )
+    <DetailContainer>
+      <DetailTitle>{state.valumeInfo.title}</DetailTitle>
+      <DetailImg>
+        <img src={state.volumeInfo.imageLinks?.smallThumbnail || defaultImg} />
+      </DetailImg>
+      <Description>{state.volumeInfo.description}</Description>
+      <InfoPart>
+        <p>
+          {state.volumeInfo.authors?.map((item) => (
+            <span key={item}>{item}</span>
+          ))}
+        </p>
+        <p>
+          {state.volumeInfo.publishedDate}
+          {state.volumeInfo.publisher && (
+            <span>/ {state.volumeInfo.publisher} </span>
+          )}
+        </p>
+      </InfoPart>
+    </DetailContainer>
+  );
 }
 
 export default Detail
