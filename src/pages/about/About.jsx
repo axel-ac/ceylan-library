@@ -12,10 +12,10 @@ import { iconData } from "../../helper/iconData";
 const About = () => {
   return (
     <AboutContainer>
-      <ProfileImg src={profile} alt="anthony" />
+      <ProfileImg src={profile} alt="ceylan" />
       <InfoContainer>
-        <h2>Hi, I'm Ceylan</h2>
-        <h3>I’m currently learning Full-Stack Development Languages.</h3>
+        <h2>Hi! I'm Ceylan</h2>
+        <h3>I'm currently learning Full-Stack Development Languages.</h3>
         <h4>
           I've already known JS, ReactJS, NextJs.
 .
